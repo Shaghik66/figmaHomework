@@ -5,6 +5,10 @@ export function useSearchInput() {
   const [searchInput, setSearchInput] = useState(false);
   const [searchProducts, setSearchProducts] = useState([]);
 
+  const handleBlur = () => {
+    setSearchInput(false);
+  };
+
   const handleCheck = (product) => {
     let newCheck = true;
 
@@ -26,5 +30,12 @@ export function useSearchInput() {
   };
   const newSearchText = (e) => setText(e.target.value);
 
-  return { newSearchText, text, handleClick, searchInput, searchProducts };
+  return {
+    newSearchText,
+    text,
+    handleClick,
+    searchInput,
+    searchProducts,
+    handleBlur,
+  };
 }

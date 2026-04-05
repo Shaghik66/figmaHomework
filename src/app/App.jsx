@@ -6,7 +6,7 @@ import searchIcon from "../shared/assets/icons/search_icon.png";
 import "./style.css";
 
 function App() {
-  const { newSearchText, text, handleClick, searchInput,searchProducts } = useSearchInput();
+  const { newSearchText, text, handleClick, searchInput,searchProducts, handleBlur } = useSearchInput();
   const { products } = useData();
 
   return (
@@ -19,6 +19,7 @@ function App() {
         searchIcon={searchIcon}
         products={products}
         searchProducts={searchProducts}
+        handleBlur={handleBlur}
       />
       <Header products={products} />
     </main>

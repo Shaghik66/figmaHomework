@@ -9,7 +9,8 @@ export function Nav({
   searchInput,
   searchIcon,
   products,
-  searchProducts
+  searchProducts,
+  handleBlur
 }) {
   return (
     <>
@@ -26,6 +27,7 @@ export function Nav({
           searchIcon={searchIcon}
           products={products}
           searchProducts={searchProducts}
+          handleBlur={handleBlur}
         />
       </div>
       <hr />
