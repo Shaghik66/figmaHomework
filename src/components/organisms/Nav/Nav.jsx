@@ -1,26 +1,32 @@
-import { useState } from "react";
 import logo from "../../../shared/assets/icons/Logotype.png";
-import searchIcon from "../../../shared/assets/icons/search_icon.png";
+import { SearchInput } from "../../molecules/SearchInput/SearchInput";
 import style from "./Nav.module.css";
 
-export function Nav() {
-  const [searchInput, setSearchInput] = useState(false);
-
-  const handleClick = () => {
-    setSearchInput(!searchInput)
-  }
-
+export function Nav({
+  newSearchText,
+  text,
+  handleClick,
+  searchInput,
+  searchIcon,
+  products,
+  searchProducts
+}) {
   return (
     <>
       <div className={style.navbarContainer}>
         <div className={style.mainLogoContainer}>
           <img className={style.mainLogo} src={logo} alt="" />
         </div>
-        <div  className={style.searchButtonContainer}>
-            {searchInput ?  <input placeholder="Search" className={style.searchInput} type="text" /> :  ""}
-          <img onClick={handleClick} className={style.searchButton} src={searchIcon} alt="" />
-        </div>
-       
+
+        <SearchInput
+          newSearchText={newSearchText}
+          text={text}
+          handleClick={handleClick}
+          searchInput={searchInput}
+          searchIcon={searchIcon}
+          products={products}
+          searchProducts={searchProducts}
+        />
       </div>
       <hr />
       <div className={style.navBarSelectContainer}>

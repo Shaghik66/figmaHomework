@@ -1,0 +1,43 @@
+.searchButtonContainer {
+  width: 36%;
+  align-self: center;
+  text-align: end;
+  padding: 8px;
+  position: relative;
+
+  .searchButton {
+    height: 16px;
+    cursor: pointer;
+    padding-top: 2px;
+  }
+
+  .searchInput {
+    margin-right: 10px;
+    min-height: 40px;
+    max-width: 400px;
+    border-radius: 8px;
+    padding: 8px;
+  }
+
+  .searchBox {
+    position: absolute;
+    min-height: 80px;
+    left: 270px;
+    width: 170px;
+  }
+  .searchTextContainer {
+    overflow: hidden;
+    border: 1px solid black;
+    min-height: 10px;
+  
+    .searchBoxText {
+    padding: 6px;
+    background-color: white;
+    width: 500px;
+    text-align: start;
+    cursor: pointer;
+  }
+  }
+}
+
+
