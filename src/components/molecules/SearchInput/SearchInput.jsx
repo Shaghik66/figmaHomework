@@ -11,9 +11,9 @@ export function SearchInput({
   handleBlur,
 }) {
   return (
-    <div className={style.searchButtonContainer} onBlur={handleBlur}>
+    <div className={style.searchButtonContainer}>
       {searchInput ? (
-        <input 
+        <input
           value={text}
           onChange={newSearchText}
           placeholder="Search"
@@ -32,13 +32,15 @@ export function SearchInput({
         alt=""
       />
 
-      <div className={searchInput ? style.searchBox : ""} >
+      <div className={searchInput ? style.searchBox : ""} onBlur={handleBlur}>
         {searchProducts.map((searchProduct) => {
           return (
-            <div className={searchInput ? style.searchTextContainer  : ""}>
-            { searchInput ? <p className={style.searchBoxText}>
-                { searchProduct.title}
-              </p> : ""}
+            <div className={searchInput ? style.searchTextContainer : ""}>
+              {searchInput ? (
+                <p className={style.searchBoxText}>{searchProduct.title}</p>
+              ) : (
+                ""
+              )}
             </div>
           );
         })}

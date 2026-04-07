@@ -1,3 +1,5 @@
+import { Route, Router } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../../shared/assets/icons/Logotype.png";
 import { SearchInput } from "../../molecules/SearchInput/SearchInput";
 import style from "./Nav.module.css";
@@ -10,13 +12,15 @@ export function Nav({
   searchIcon,
   products,
   searchProducts,
-  handleBlur
+  handleBlur,
 }) {
   return (
     <>
       <div className={style.navbarContainer}>
         <div className={style.mainLogoContainer}>
-          <img className={style.mainLogo} src={logo} alt="" />
+          <NavLink to="/">
+            <img className={style.mainLogo} src={logo} alt="" />
+          </NavLink>
         </div>
 
         <SearchInput
